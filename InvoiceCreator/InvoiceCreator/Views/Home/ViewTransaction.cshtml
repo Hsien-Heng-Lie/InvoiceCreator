@@ -1,0 +1,56 @@
+﻿
+@model List<InvoiceCreator.Models.TransactionsModel>;
+@using X.PagedList.Mvc;
+@using X.PagedList;
+@using X.PagedList.Web;
+
+
+@{
+    ViewData["Title"] = "View Transactions";
+}
+<div class="view-trans-wrapper">
+  
+    @using (Html.BeginForm("ViewTransaction", "Home", FormMethod.Post, new { @class= "search-wrapper", placeholder="yes"}))
+    {
+        @Html.TextBox("SearchString",ViewBag.currentFilter as string,null,new {@class="search-bar"})
+        <input type="submit" value="search" class="button-general-style" />
+    }
+    <div class="table-wrapper">
+        <div class="table-header">
+            <div class="table-heading">Invoice number</div>
+            <div class="table-heading">Student name</div>
+            <div class="table-heading">Grad year</div>
+            <div class="table-heading">Invoice date</div>
+            <div class="table-heading">Download invoice</div>
+        </div>
+
+        <!--This will need to be mapped across multiple based on pagination-->
+        @foreach(var transaction in Model )
+        {
+            <div class="transaction-card">
+                <div class="trans-card-field">@transaction.Id</div>
+                <div class="trans-card-field">@transaction.Student.FirstName @transaction.Student.LastName</div>
+                <div class="trans-card-field">@transaction.Student.gradYear</div>
+                <div class="trans-card-field">@transaction.Question.LevelUp.End</div>
+                <div class="trans-card-field-icon">
+                    <img class="download-img" src="~/download-svgrepo-com.svg" alt="cool"/>
+                </div>
+            </div>
+        }
+    </div>
+
+        
+    <!--Pagination component-->
+    <div class="pagination-wrapper">
+
+        @using (Html.BeginForm("PaginationPrevious", "Home", FormMethod.Post))
+        {
+            <input class="button-general-style" type="submit" value="Previous" />
+        }
+        <label>@ViewBag.PageNumber</label>
+        @using (Html.BeginForm("PaginationNext", "Home", FormMethod.Post))
+        {
+            <input class="button-general-style" type="submit" value="Next" />
+        }
+    </div>
+</div>
