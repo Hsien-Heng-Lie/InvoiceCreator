@@ -226,3 +226,63 @@ body {
     width: 100%;
     height: 40px;
 }
+
+.add-student-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 61px 89px;
+    gap: 10px;
+    width: 100%;
+}
+
+.add-student-wrapper .section {
+    background-color: white;
+    width: 100%;
+    border-radius: 16px;
+    padding: 10px 40px;
+}
+
+.add-student-wrapper h5 {
+    text-align: left;
+}
+
+form {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+}
+
+form .form-group {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+form .form-group input, .form-group form label {
+    display: block;
+    width: 100%;
+}
+
+form input {
+    height: 42px;
+    border-radius: 12px;
+    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.25);
+}
+
+form label h5 {
+    line-height: 42px;
+    margin-right: 20px;
+}
+
+form input[type="email"]{
+    /* width: 100%; */
+}
+
+.submit-btn {
+    padding: 5px 20px;
+    border-radius: 10px;
+}
