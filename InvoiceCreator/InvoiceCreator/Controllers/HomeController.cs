@@ -53,6 +53,11 @@ namespace InvoiceCreator.Controllers
             return View(pagination.GetPageByNumber(transactions,pagination._currentPage));
         }
 
+        public IActionResult AddStudent()
+        {
+            return View();
+        }
+
         public IActionResult PaginationNext() 
         {
 
