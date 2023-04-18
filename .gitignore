@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/InvoiceCreator/FileContentIndex
+/.vs/InvoiceCreator/v17
+/InvoiceCreator/.vs
+/.vs
+/InvoiceCreator/InvoiceCreator/obj/Debug/net6.0
+/InvoiceCreator/InvoiceCreator/obj/Release/net6.0
