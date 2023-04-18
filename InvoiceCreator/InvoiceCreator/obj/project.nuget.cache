@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "fUt8wCmfLtYtLYb18f1xMhO4vz2vuJ7WTEZTOhm8Emw4ojmTtH+auM/sSuXFrnOsmSqzYImkdr+dKGEVzsSkKQ==",
+  "dgSpecHash": "dj9+YdvYsAhW0S57epw1tS0QgDYjHZYHqopn/ARVs22pGcE+EHGfegmiugfIWzOII+FFxv2JWQFQjxXm0Lld3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+  "projectFilePath": "C:\\Users\\paueg001\\Documents\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.7\\microsoft.aspnet.webpages.3.2.7.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\pagedlist\\1.17.0\\pagedlist.1.17.0.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\pagedlist.mvc\\4.5.0\\pagedlist.mvc.4.5.0.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\x.pagedlist\\8.0.7\\x.pagedlist.8.0.7.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\x.pagedlist.mvc\\8.0.7\\x.pagedlist.mvc.8.0.7.nupkg.sha512",
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\x.pagedlist.web.common\\8.0.7\\x.pagedlist.web.common.8.0.7.nupkg.sha512"
+    "C:\\Users\\paueg001\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.7\\microsoft.aspnet.webpages.3.2.7.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\pagedlist\\1.17.0\\pagedlist.1.17.0.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\pagedlist.mvc\\4.5.0\\pagedlist.mvc.4.5.0.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\x.pagedlist\\8.0.7\\x.pagedlist.8.0.7.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\x.pagedlist.mvc\\8.0.7\\x.pagedlist.mvc.8.0.7.nupkg.sha512",
+    "C:\\Users\\paueg001\\.nuget\\packages\\x.pagedlist.web.common\\8.0.7\\x.pagedlist.web.common.8.0.7.nupkg.sha512"
   ],
   "logs": [
     {

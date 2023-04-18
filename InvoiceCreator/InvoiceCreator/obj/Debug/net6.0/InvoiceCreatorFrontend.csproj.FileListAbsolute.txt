@@ -86,3 +86,47 @@ C:\Users\bbdnet2996\Documents\GitHub\Invoice Creator\InvoiceCreator\InvoiceCreat
 C:\Users\bbdnet2996\Documents\GitHub\Invoice Creator\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.pdb
 C:\Users\bbdnet2996\Documents\GitHub\Invoice Creator\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.genruntimeconfig.cache
 C:\Users\bbdnet2996\Documents\GitHub\Invoice Creator\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\ref\InvoiceCreatorFrontend.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\appsettings.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\InvoiceCreatorFrontend.staticwebassets.runtime.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\InvoiceCreatorFrontend.exe
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\InvoiceCreatorFrontend.deps.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\InvoiceCreatorFrontend.runtimeconfig.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\InvoiceCreatorFrontend.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\InvoiceCreatorFrontend.pdb
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\PagedList.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\PagedList.Mvc.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\X.PagedList.Mvc.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.csproj.AssemblyReference.cache
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.AssemblyInfoInputs.cache
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.AssemblyInfo.cs
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.csproj.CoreCompileInputs.cache
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.RazorAssemblyInfo.cache
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.RazorAssemblyInfo.cs
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets\msbuild.InvoiceCreatorFrontend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets\msbuild.build.InvoiceCreatorFrontend.props
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InvoiceCreatorFrontend.props
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InvoiceCreatorFrontend.props
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\scopedcss\bundle\InvoiceCreatorFrontend.styles.css
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\scopedcss\projectbundle\InvoiceCreatorFrontend.bundle.scp.css
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.csproj.CopyComplete
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\refint\InvoiceCreatorFrontend.dll
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.pdb
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.genruntimeconfig.cache
+C:\Users\paueg001\Documents\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\ref\InvoiceCreatorFrontend.dll
