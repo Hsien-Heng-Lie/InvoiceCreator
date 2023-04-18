@@ -37,7 +37,7 @@ GO
 
 CREATE TABLE [dbo].[Question]
 (
-	[Id] INT NOT NULL, 
+	[Id] INT NOT NULL IDENTITY(1,1), 
     [Description] VARCHAR(500) NOT NULL, 
     [QuestionDifficultyId] INT NOT NULL, 
     [LevelUpId] INT NOT NULL, 
