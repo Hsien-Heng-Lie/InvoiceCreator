@@ -37,7 +37,7 @@ GO
 
 CREATE TABLE [dbo].[Question]
 (
-	[Id] INT NOT NULL, 
+	[Id] INT NOT NULL IDENTITY(1,1), 
     [Description] VARCHAR(500) NOT NULL, 
     [QuestionDifficultyId] INT NOT NULL, 
     [LevelUpId] INT NOT NULL, 
@@ -66,7 +66,7 @@ GO
 
 CREATE TABLE [dbo].[Transaction]
 (
-	[Id] INT NOT NULL, 
+	[Id] INT NOT NULL IDENTITY(1,1), 
     [QuestionId] INT NOT NULL, 
     [StudentId] INT NOT NULL, 
     CONSTRAINT [FK_Transaction_Student] FOREIGN KEY ([StudentId]) REFERENCES [Student]([Id]), 
