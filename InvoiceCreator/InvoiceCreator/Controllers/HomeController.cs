@@ -9,6 +9,9 @@ namespace InvoiceCreator.Controllers
 
         public IActionResult Index()
         {
+            // Set navbar indicator location
+            ViewBag.indicatorOpacity = "0";
+            
             return View();
         }
 

@@ -1,0 +1,74 @@
+@using InvoiceCreator.StaticData;
+@model List<InvoiceCreator.Models.StudentModel>;
+    
+
+@{
+    ViewData["Title"] = "Create Invoice";
+}
+
+<div class="text-center">
+    <div class="create-invoice-wrapper">
+        
+        <div class="section">
+            <form>
+                <label for="email"><h5>Student</h5></label>
+                <select onchange="this.value == 'addNew' ? window.location = '/Student/AddStudent/' : null">
+                    <option selected disabled>Select Student</option>
+                    @foreach (var student in StudentData.Students)
+                    {
+                        <option>@student.FirstName @student.LastName (@student.gradYear)</option>
+                    }
+                    <option disabled>--------------------</option>
+                    <option value="addNew">Add new student</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="section">
+            <h5>Question</h5>
+
+            <form>
+                <div class="form-group">
+                    <label for="questionDifficulty">Difficulty</label>
+                    <select id="questionDifficulty">
+                        <option selected disabled>Select Difficulty</option>
+                        <option value="1">Very Easy</option>
+                        <option value="2">Easy</option>
+                        <option value="3">Medium</option>
+                        <option value="4">Hard</option>
+                        <option value="5">Very Hard</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="questionLevelup">Level Up</label>
+                    <select id="questionLevelup" onchange="this.value == 'addNew' ? window.location = '/LevelUp/AddLevelUp/' : null">
+                        <option selected disabled>Select Level Up</option>
+
+                        <option disabled>--------------------</option>
+                        <option value="addNew">Add new Level-Up</option>
+                    </select>
+                </div>
+            </form>
+
+            <form>
+                <div class="form-group">
+                    <label for="questionDescription">Question Description</label>
+                    <textarea id="questionDescription" placeholder="e.g. What is 2 + 2?"></textarea>
+                </div>
+            </form>
+        </div>
+        
+        <div class="section">
+            <form>
+                <label for="sendEmail"><h5>Send an email to the student?</h5></label>
+                <div class="checkbox-wrapper">
+                    <input class='tgl tgl-ios' id='sendEmail' type='checkbox' checked />
+                    <label class='tgl-btn' for='sendEmail'></label>
+                </div>
+            </form>
+        </div>
+
+        <button class="submit-btn">Submit</button>
+    </div>
+</div>

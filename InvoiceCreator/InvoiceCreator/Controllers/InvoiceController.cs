@@ -42,6 +42,11 @@ namespace InvoiceCreatorFrontend.Controllers
 
         public IActionResult ViewTransaction(string searchString, string currentFilter, int? page)
         {
+            // Set navbar indicator location
+            ViewBag.indicatorLeft = "2.5%";
+            ViewBag.indicatorOpacity = "1";
+            ViewBag.selectedPage = "1";
+
             if (searchString != null)
             {
                 page = 1;
@@ -60,6 +65,16 @@ namespace InvoiceCreatorFrontend.Controllers
 
             ViewBag.PageNumber = pagination._currentPage;
             return View(pagination.GetPageByNumber(transactions, pagination._currentPage));
+        }
+
+        public IActionResult CreateInvoice()
+        {
+            // Set navbar indicator location
+            ViewBag.indicatorLeft = "28%";
+            ViewBag.indicatorOpacity = "1";
+            ViewBag.selectedPage = "2";
+
+            return View();
         }
     }
 }
