@@ -9,10 +9,19 @@
       "InvoiceCreatorFrontend/1.0.0": {
         "dependencies": {
           "PagedList.Mvc": "4.5.0",
-          "X.PagedList.Mvc": "8.0.7"
+          "X.PagedList.Mvc": "8.0.7",
+          "X.PagedList.Mvc.Core": "8.4.7"
         },
         "runtime": {
           "InvoiceCreatorFrontend.dll": {}
+        }
+      },
+      "JetBrains.Annotations/2022.3.1": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "4242.42.42.42",
+            "fileVersion": "2022.3.1.0"
+          }
         }
       },
       "Microsoft.AspNet.Mvc/5.2.7": {
@@ -87,24 +96,38 @@
         }
       },
       "System.Text.Encodings.Web/4.7.0": {},
-      "X.PagedList/8.0.7": {
+      "X.PagedList/8.4.7": {
+        "dependencies": {
+          "JetBrains.Annotations": "2022.3.1"
+        },
         "runtime": {
-          "lib/netstandard2.0/X.PagedList.dll": {
-            "assemblyVersion": "8.0.7.0",
-            "fileVersion": "8.0.7.0"
+          "lib/net6.0/X.PagedList.dll": {
+            "assemblyVersion": "8.4.7.0",
+            "fileVersion": "8.4.7.0"
           }
         }
       },
       "X.PagedList.Mvc/8.0.7": {
         "dependencies": {
           "Microsoft.AspNet.Mvc": "5.2.7",
-          "X.PagedList": "8.0.7",
+          "X.PagedList": "8.4.7",
           "X.PagedList.Web.Common": "8.0.7"
         },
         "runtime": {
           "lib/net48/X.PagedList.Mvc.dll": {
             "assemblyVersion": "8.0.7.0",
             "fileVersion": "8.0.7.0"
+          }
+        }
+      },
+      "X.PagedList.Mvc.Core/8.4.7": {
+        "dependencies": {
+          "X.PagedList": "8.4.7"
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {
+            "assemblyVersion": "8.4.7.0",
+            "fileVersion": "8.4.7.0"
           }
         }
       },
@@ -126,6 +149,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "JetBrains.Annotations/2022.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-11nsS3+lFICGkztVs9PP2NRItxf9fF+qD6xEW/T0YGto52zj07wseUeBdMAU1ah9HNVTDZyRC1u4NWdtJScwhw==",
+      "path": "jetbrains.annotations/2022.3.1",
+      "hashPath": "jetbrains.annotations.2022.3.1.nupkg.sha512"
     },
     "Microsoft.AspNet.Mvc/5.2.7": {
       "type": "package",
@@ -176,12 +206,12 @@
       "path": "system.text.encodings.web/4.7.0",
       "hashPath": "system.text.encodings.web.4.7.0.nupkg.sha512"
     },
-    "X.PagedList/8.0.7": {
+    "X.PagedList/8.4.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eX1Wd5MrIehx9RaFWketo1LrZJDsEcJYx06LBQnaMNZX+CQgUS4A0z7GeaotkSZo6Cau6IGllj26XPpO8Lns4Q==",
-      "path": "x.pagedlist/8.0.7",
-      "hashPath": "x.pagedlist.8.0.7.nupkg.sha512"
+      "sha512": "sha512-ZA1WcyNviMUhivCgwKAm/5/YsNP3Yf/n81SzrPaHSJOcFzavA9MrXTT8M+ZX4fvHwLCL1bY6BPXvwZF5pRtgTg==",
+      "path": "x.pagedlist/8.4.7",
+      "hashPath": "x.pagedlist.8.4.7.nupkg.sha512"
     },
     "X.PagedList.Mvc/8.0.7": {
       "type": "package",
@@ -189,6 +219,13 @@
       "sha512": "sha512-Svb2MC/Cy5Q6z2Kj7e6hpWJJOs/R0o12oojyxXDsPat7YnrdYU3Tfs5ntk6SLbDLZNH0flPwNFQ1N+l5tQU/eg==",
       "path": "x.pagedlist.mvc/8.0.7",
       "hashPath": "x.pagedlist.mvc.8.0.7.nupkg.sha512"
+    },
+    "X.PagedList.Mvc.Core/8.4.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dS8sJr/aT3AoV9ePaqmF4wijh/2vqS9rxpOvzjPPStkQcR8rUaGPVezPgY/kJwWCZ2hdgKNralbU08So0otNxw==",
+      "path": "x.pagedlist.mvc.core/8.4.7",
+      "hashPath": "x.pagedlist.mvc.core.8.4.7.nupkg.sha512"
     },
     "X.PagedList.Web.Common/8.0.7": {
       "type": "package",

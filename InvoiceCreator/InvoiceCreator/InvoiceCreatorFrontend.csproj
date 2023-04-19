@@ -12,11 +12,13 @@
 
   <ItemGroup>
     <Folder Include="assets\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
     <PackageReference Include="X.PagedList.Mvc" Version="8.0.7" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
   </ItemGroup>
 
 </Project>
