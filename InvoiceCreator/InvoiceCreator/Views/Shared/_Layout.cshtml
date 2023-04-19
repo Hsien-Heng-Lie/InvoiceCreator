@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InvoiceCreator.styles.css" asp-append-version="true" />
+    <style>
+        #indicator {
+            left: @ViewBag.indicatorLeft;
+            opacity: @ViewBag.indicatorOpacity;
+        }
+
+        .navbar a.nav-item:nth-child(@ViewBag.selectedPage) {
+            background: -webkit-linear-gradient(130deg, #000, #000);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
 <body>
     <div class="invoice-creator-wrapper">
@@ -17,9 +30,10 @@
             <nav class="navbar">
                 <div class="main-wrapper">
                     <a class="nav-item" asp- asp-area="" asp-controller="Invoice" asp-action="ViewTransaction">View Invoices</a>
-                    <a class="nav-item" asp-area="" asp-controller="Invoice" asp-action="Index">Create Invoice</a>
+                    <a class="nav-item" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Create Invoice</a>
                     <a class="nav-item" asp-area="" asp-controller="Student" asp-action="AddStudent">Add Student</a>
                     <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Index">Add Level-Up</a>
+                    <div id="indicator"></div>
                 </div>
             </nav>
         </header>

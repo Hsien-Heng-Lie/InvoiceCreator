@@ -309,19 +309,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\paueg001\\.nuget\\packages\\": {}
+    "C:\\Users\\bbdnet2996\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paueg001\\Documents\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+      "projectUniqueName": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
       "projectName": "InvoiceCreatorFrontend",
-      "projectPath": "C:\\Users\\paueg001\\Documents\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
-      "packagesPath": "C:\\Users\\paueg001\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paueg001\\Documents\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
+      "projectPath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+      "packagesPath": "C:\\Users\\bbdnet2996\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\paueg001\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bbdnet2996\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -329,6 +334,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
