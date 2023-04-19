@@ -3,6 +3,33 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2 class="display-5" style="margin-top: 1em;">Welcome</h2>
+
+    <h3 style="margin-bottom: 2em;">Create, view, and send invoices for questions asked by students.</h3>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">View all invoices created</h5>
+                <div class="card-body">
+                    <p>View a table of all the invoices created. You can view each invoice can see the details of each invoice as well as download them.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Invoice" asp-action="ViewTransaction">View All Invoices</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <h5 class="card-header">Create new invoices</h5>
+                <div class="card-body">
+                    <p>Create a new invoice for a question asked by a student. Invoices contain details such as the question and difficulty.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-success" asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Create New Invoice</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </div>
