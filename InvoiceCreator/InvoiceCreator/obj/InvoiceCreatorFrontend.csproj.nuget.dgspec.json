@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {}
+    "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {
+    "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+        "projectUniqueName": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
         "projectName": "InvoiceCreatorFrontend",
-        "projectPath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
-        "packagesPath": "C:\\Users\\bbdnet2996\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
+        "projectPath": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+        "packagesPath": "C:\\Users\\pints001\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\bbdnet2996\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pints001\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -52,6 +52,10 @@
             "X.PagedList.Mvc": {
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.4.7, )"
             }
           },
           "imports": [
@@ -65,6 +69,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

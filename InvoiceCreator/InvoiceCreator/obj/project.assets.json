@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "JetBrains.Annotations/2022.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "Microsoft.AspNet.Mvc/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -118,13 +131,16 @@
           }
         }
       },
-      "X.PagedList/8.0.7": {
+      "X.PagedList/8.4.7": {
         "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "2022.3.1"
+        },
         "compile": {
-          "lib/netstandard2.0/X.PagedList.dll": {}
+          "lib/net6.0/X.PagedList.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/X.PagedList.dll": {}
+          "lib/net6.0/X.PagedList.dll": {}
         }
       },
       "X.PagedList.Mvc/8.0.7": {
@@ -141,6 +157,21 @@
           "lib/net48/X.PagedList.Mvc.dll": {}
         }
       },
+      "X.PagedList.Mvc.Core/8.4.7": {
+        "type": "package",
+        "dependencies": {
+          "X.PagedList": "8.4.7"
+        },
+        "compile": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "X.PagedList.Web.Common/8.0.7": {
         "type": "package",
         "dependencies": {
@@ -156,6 +187,28 @@
     }
   },
   "libraries": {
+    "JetBrains.Annotations/2022.3.1": {
+      "sha512": "11nsS3+lFICGkztVs9PP2NRItxf9fF+qD6xEW/T0YGto52zj07wseUeBdMAU1ah9HNVTDZyRC1u4NWdtJScwhw==",
+      "type": "package",
+      "path": "jetbrains.annotations/2022.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "jetbrains.annotations.2022.3.1.nupkg.sha512",
+        "jetbrains.annotations.nuspec",
+        "lib/net20/JetBrains.Annotations.dll",
+        "lib/net20/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard1.0/JetBrains.Annotations.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.xml",
+        "lib/netstandard2.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard2.0/JetBrains.Annotations.dll",
+        "lib/netstandard2.0/JetBrains.Annotations.xml",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
+      ]
+    },
     "Microsoft.AspNet.Mvc/5.2.7": {
       "sha512": "m3hUsn48k6Qb5El9A8naTwGTLCdSQKGSpGweqIfiVKltGJzAJJxuXvhhaQQtLCGg3i5V88iGjz0JG72/tlFKlg==",
       "type": "package",
@@ -265,15 +318,18 @@
         "version.txt"
       ]
     },
-    "X.PagedList/8.0.7": {
-      "sha512": "eX1Wd5MrIehx9RaFWketo1LrZJDsEcJYx06LBQnaMNZX+CQgUS4A0z7GeaotkSZo6Cau6IGllj26XPpO8Lns4Q==",
+    "X.PagedList/8.4.7": {
+      "sha512": "ZA1WcyNviMUhivCgwKAm/5/YsNP3Yf/n81SzrPaHSJOcFzavA9MrXTT8M+ZX4fvHwLCL1bY6BPXvwZF5pRtgTg==",
       "type": "package",
-      "path": "x.pagedlist/8.0.7",
+      "path": "x.pagedlist/8.4.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "lib/net6.0/X.PagedList.dll",
+        "lib/net7.0/X.PagedList.dll",
         "lib/netstandard2.0/X.PagedList.dll",
-        "x.pagedlist.8.0.7.nupkg.sha512",
+        "lib/netstandard2.1/X.PagedList.dll",
+        "x.pagedlist.8.4.7.nupkg.sha512",
         "x.pagedlist.nuspec"
       ]
     },
@@ -287,6 +343,19 @@
         "lib/net48/X.PagedList.Mvc.dll",
         "x.pagedlist.mvc.8.0.7.nupkg.sha512",
         "x.pagedlist.mvc.nuspec"
+      ]
+    },
+    "X.PagedList.Mvc.Core/8.4.7": {
+      "sha512": "dS8sJr/aT3AoV9ePaqmF4wijh/2vqS9rxpOvzjPPStkQcR8rUaGPVezPgY/kJwWCZ2hdgKNralbU08So0otNxw==",
+      "type": "package",
+      "path": "x.pagedlist.mvc.core/8.4.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/X.PagedList.Mvc.Core.dll",
+        "lib/net7.0/X.PagedList.Mvc.Core.dll",
+        "x.pagedlist.mvc.core.8.4.7.nupkg.sha512",
+        "x.pagedlist.mvc.core.nuspec"
       ]
     },
     "X.PagedList.Web.Common/8.0.7": {
@@ -305,27 +374,28 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "PagedList.Mvc >= 4.5.0",
-      "X.PagedList.Mvc >= 8.0.7"
+      "X.PagedList.Mvc >= 8.0.7",
+      "X.PagedList.Mvc.Core >= 8.4.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbdnet2996\\.nuget\\packages\\": {},
+    "C:\\Users\\pints001\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+      "projectUniqueName": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
       "projectName": "InvoiceCreatorFrontend",
-      "projectPath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
-      "packagesPath": "C:\\Users\\bbdnet2996\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbdnet2996\\Documents\\GitHub\\Invoice Creator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
+      "projectPath": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+      "packagesPath": "C:\\Users\\pints001\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\bbdnet2996\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pints001\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -360,6 +430,10 @@
           "X.PagedList.Mvc": {
             "target": "Package",
             "version": "[8.0.7, )"
+          },
+          "X.PagedList.Mvc.Core": {
+            "target": "Package",
+            "version": "[8.4.7, )"
           }
         },
         "imports": [
@@ -373,6 +447,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

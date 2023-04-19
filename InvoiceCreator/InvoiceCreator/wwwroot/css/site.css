@@ -209,17 +209,12 @@ html {
       color: #000000;
   }
   
-  .pagination-wrapper {
+  .pagination {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 9px 35px;
-      gap: 10px;
-      width: 100%;
-      height: 40px;
+      padding: 20px;
+      gap: 20px;
   }
-  
   .add-student-wrapper, .create-invoice-wrapper {
       display: flex;
       flex-direction: column;
