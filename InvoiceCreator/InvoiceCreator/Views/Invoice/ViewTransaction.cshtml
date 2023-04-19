@@ -1,6 +1,7 @@
 ﻿
-@model List<InvoiceCreator.Models.TransactionsModel>;
-@using X.PagedList.Mvc;
+@model X.PagedList.IPagedList<InvoiceCreator.Models.TransactionsModel>;
+@using X.PagedList.Mvc.Core;
+@using Microsoft.AspNetCore.Mvc;
 @using X.PagedList;
 @using X.PagedList.Web;
 
@@ -10,7 +11,7 @@
 }
 <div class="view-trans-wrapper">
   
-    @using (Html.BeginForm("ViewTransaction", "Home", FormMethod.Post, new { @class= "search-wrapper", placeholder="yes"}))
+    @using (Html.BeginForm("ViewTransaction", "Invoice", FormMethod.Post, new { @class= "search-wrapper", placeholder="yes"}))
     {
         @Html.TextBox("SearchString",ViewBag.currentFilter as string,null,new {@class="search-bar"})
         <input type="submit" value="search" class="button-general-style" />
@@ -39,18 +40,14 @@
         }
     </div>
 
-        
-    <!--Pagination component-->
-    <div class="pagination-wrapper">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("ViewTransaction",
+    new { page, currentFilter = ViewBag.CurrentFilter }), new X.PagedList.Web.Common.PagedListRenderOptions(){
+        UlElementClasses = new[] {"pagination"},
 
-        @using (Html.BeginForm("PaginationPrevious", "Home", FormMethod.Post))
-        {
-            <input class="button-general-style" type="submit" value="Previous" />
-        }
-        <label>@ViewBag.PageNumber</label>
-        @using (Html.BeginForm("PaginationNext", "Home", FormMethod.Post))
-        {
-            <input class="button-general-style" type="submit" value="Next" />
-        }
-    </div>
+        LinkToNextPageFormat = "Next >",
+        LinkToPreviousPageFormat = "< Previous",
+        MaximumPageNumbersToDisplay = 5,
+    
+    })
 </div>
