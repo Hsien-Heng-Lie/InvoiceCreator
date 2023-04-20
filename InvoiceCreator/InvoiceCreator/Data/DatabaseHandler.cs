@@ -1,12 +1,14 @@
 ﻿using InvoiceCreator.Models;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace InvoiceCreator.Data
 {
     public static class DatabaseHandler
     {
-        private static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB; Database=Invoice_Creator;Integrated Security = True;";
+    
+        private static string connectionString = @"Data Source=ETHANALB\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
 
         public static List<StudentModel> getStudents()
         {
@@ -221,5 +223,116 @@ namespace InvoiceCreator.Data
 
             return listOfTransactions;
         }
+
+        public static void addQuestion(string studentId, string difficultyId, string levelUpId, string question)
+        {
+
+            string sql = "DECLARE @studentId INT =" + studentId
+                + ",@diffcultyId INT =" + difficultyId
+                + ",@question VARCHAR(500) =" + @"'" + question + @"'" 
+                + @"INSERT INTO [dbo].[Question]
+                    ([Description],
+                    [QuestionDifficultyId],
+                    [LevelUpId])
+                    VALUES
+                    (@question
+                    ,@diffcultyId
+                    ,@studentId)
+
+                    DECLARE @questionId INT = SCOPE_IDENTITY()
+
+                    INSERT INTO [dbo].[Transaction]
+                    ([QuestionId]
+                    ,[StudentId])
+                    VALUES
+                    (@questionId
+                    ,@studentId) "
+                ;
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, cnn);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.ExecuteNonQuery();
+
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
+        public static void addStudent(string firstName, string lastName, int gradYear, string email)
+        {
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    string query = "INSERT INTO [Invoice_Creator].[dbo].[Student] (FirstName,LastName,Email,GradYear)";
+                    query += " VALUES (@FirstName,@LastName,@Email,@GradYear)";
+
+                    SqlCommand myCommand = new SqlCommand(query, cnn);
+                    myCommand.Parameters.AddWithValue("@FirstName", firstName);
+                    myCommand.Parameters.AddWithValue("@LastName", lastName);
+                    myCommand.Parameters.AddWithValue("@Email", email);
+                    myCommand.Parameters.AddWithValue("@GradYear", new DateTime(gradYear, 01, 01));
+                    myCommand.ExecuteNonQuery();
+
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+        }
+
+        public static List<TransactionsModel> getStudentTransactions(int studentId)
+        {
+            List<TransactionsModel> listOfTransactions = new List<TransactionsModel>();
+            List<QuestionModel> listOfQuestions = getQuestions();
+            StudentModel student = getStudents().Find(s => s.Id.Equals(studentId));
+            string sql = "SELECT * FROM [Invoice_Creator].[dbo].[Transaction] WHERE StudentId = '" + studentId + "'";
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, cnn);
+                    cmd.CommandType = CommandType.Text;
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var transaction = new TransactionsModel();
+
+                        transaction.Id = Convert.ToInt32(reader["Id"]);
+                        transaction.Student = student;
+                        transaction.Question = listOfQuestions.Find(question => question.Id.Equals(reader["QuestionId"]));
+
+                        listOfTransactions.Add(transaction);
+                    }
+
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            return listOfTransactions;
+        }
+
     }
 }
