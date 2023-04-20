@@ -66,13 +66,27 @@ namespace InvoiceCreatorFrontend.Controllers
         }
 
         // shouldsend return on or off. not true or false.
-        public IActionResult CreateInvoice(string student, string difficulty, string levelup, string question,string shouldSend)
+        public IActionResult CreateInvoice()
         {
             // Set navbar indicator location
             ViewBag.indicatorLeft = "28%";
             ViewBag.indicatorOpacity = "1";
             ViewBag.selectedPage = "2";
-            EmailHelper.SendEmail("fourie.hyla@gmail.com", student, 1);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateInvoice(string student, string difficulty, string levelup, string question, string shouldSend)
+        {
+            // Set navbar indicator location
+            ViewBag.indicatorLeft = "28%";
+            ViewBag.indicatorOpacity = "1";
+            ViewBag.selectedPage = "2";
+            Console.WriteLine("gerervbxjcnm");
+            if(shouldSend == "on") { EmailHelper.SendEmail("fourie.hyla@gmail.com", student, 1);
+                Console.WriteLine("inif");
+            }
+            
             return View();
         }
     }
