@@ -201,5 +201,49 @@ namespace InvoiceCreator.Data
 
             return listOfTransactions;
         }
+
+        public static void addQuestion(string studentId, string difficultyId, string levelUpId, string question)
+        {
+
+            string sql = "DECLARE @studentId INT =" + studentId
+                + ",@diffcultyId INT =" + difficultyId
+                + ",@question VARCHAR(500) =" + @"'" + question + @"'" 
+                + @"INSERT INTO [dbo].[Question]
+                    ([Description],
+                    [QuestionDifficultyId],
+                    [LevelUpId])
+                    VALUES
+                    (@question
+                    ,@diffcultyId
+                    ,@studentId)
+
+                    DECLARE @questionId INT = SCOPE_IDENTITY()
+
+                    INSERT INTO [dbo].[Transaction]
+                    ([QuestionId]
+                    ,[StudentId])
+                    VALUES
+                    (@questionId
+                    ,@studentId) "
+                ;
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, cnn);
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.ExecuteNonQuery();
+
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
     }
 }
