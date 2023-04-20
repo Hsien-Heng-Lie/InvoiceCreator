@@ -1,5 +1,5 @@
 ﻿
-@model X.PagedList.IPagedList<InvoiceCreator.Models.TransactionsModel>;
+@model X.PagedList.IPagedList<InvoiceCreator.Models.StudentModel>;
 @using X.PagedList.Mvc.Core;
 @using Microsoft.AspNetCore.Mvc;
 @using X.PagedList;
@@ -26,33 +26,34 @@
     }
     <div class="table-wrapper">
         <div class="table-header">
-            <div class="table-heading">Invoice number</div>
+            <div class="table-heading">Student number</div>
             <div class="table-heading">Student name</div>
             <div class="table-heading">Grad year</div>
-            <div class="table-heading">Invoice date</div>
-            <div class="table-heading"></div>
+            <div class="table-heading">Download Invoice</div>
+            <div class="table-heading">Send email</div>
         </div>
 
         <!--This will need to be mapped across multiple based on pagination-->
-        @foreach(var transaction in Model )
+        @foreach(var student in Model )
         {
             <div class="transaction-card">
-                <div class="trans-card-field" name="transId">@transaction.Id</div>
-                <div class="trans-card-field">@transaction.Student.FirstName @transaction.Student.LastName</div>
-                <div class="trans-card-field">@transaction.Student.gradYear</div>
-                <div class="trans-card-field">@transaction.Question.LevelUp.End</div>
+                <div class="trans-card-field" name="transId">@student.Id</div>
+                <div class="trans-card-field">@student.FirstName @student.LastName</div>
+                <div class="trans-card-field">@student.gradYear</div>
                 <div class="trans-card-field-icon">
                     @using (Html.BeginForm("DownloadPDF", "Invoice", FormMethod.Post))
                     {
-                        @Html.Hidden("transId",transaction.Id);
+                        @Html.Hidden("transId",student.Id)
+                        ;
                         <button type="submit" class="plain-btn" title="Downlod PDF">
                             <i class="fa-solid fa-download"></i>
                         </button>
                     }
-
+                </div>
+                <div class="trans-card-field-icon">
                     @using (Html.BeginForm("emailPDF", "Invoice", FormMethod.Post))
                     {
-                        @Html.Hidden("transId",transaction.Id);
+                        @Html.Hidden("studentId",student.Id);
                         <button type="submit" class="plain-btn" title="Email PDF to Student">
                             <i class="fa-solid fa-envelope"></i>
                         </button>

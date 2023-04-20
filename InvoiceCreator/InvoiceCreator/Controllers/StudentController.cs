@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using InvoiceCreator.Data;
+using System.Reflection.Metadata.Ecma335;
 
 namespace InvoiceCreatorFrontend.Controllers
 {
@@ -12,9 +13,11 @@ namespace InvoiceCreatorFrontend.Controllers
             ViewBag.indicatorOpacity = "1";
             ViewBag.selectedPage = "3";
             if (FirstName != null && LastName != null && GradYear != null && Email != null) { 
-            DatabaseHandler.addStudent(FirstName, LastName, GradYear, Email);
+                DatabaseHandler.addStudent(FirstName, LastName, GradYear, Email);
             }
             return View();
         }
+
+        
     }
 }

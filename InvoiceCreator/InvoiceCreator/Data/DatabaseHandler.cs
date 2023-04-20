@@ -8,7 +8,7 @@ namespace InvoiceCreator.Data
     public static class DatabaseHandler
     {
     
-        private static string connectionString = @"Data Source=HSIENL\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
+        private static string connectionString = @"Data Source=BBD-SP\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
 
         public static List<StudentModel> getStudents()
         {
@@ -233,6 +233,7 @@ namespace InvoiceCreator.Data
 
             string sql = "DECLARE @studentId INT =" + studentId
                 + ",@diffcultyId INT =" + difficultyId
+                + ",@levelUpId INT =" + levelUpId
                 + ",@question VARCHAR(500) =" + @"'" + question + @"'" 
                 + @"INSERT INTO [dbo].[Question]
                     ([Description],
@@ -241,7 +242,7 @@ namespace InvoiceCreator.Data
                     VALUES
                     (@question
                     ,@diffcultyId
-                    ,@studentId)
+                    ,@levelUpId)
 
                     DECLARE @questionId INT = SCOPE_IDENTITY()
 
