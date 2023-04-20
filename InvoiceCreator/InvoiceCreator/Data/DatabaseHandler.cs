@@ -1,12 +1,13 @@
 ﻿using InvoiceCreator.Models;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 
 namespace InvoiceCreator.Data
 {
     public static class DatabaseHandler
     {
-        private static string connectionString = @"Data Source=HSIENL\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
+        private static string connectionString = @"Data Source=ETHANALB\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
 
         public static List<StudentModel> getStudents()
         {
@@ -244,6 +245,34 @@ namespace InvoiceCreator.Data
                     Console.WriteLine(ex);
                 }
             }
+        }
+
+        public static void addStudent(string firstName, string lastName, int gradYear, string email)
+        {
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    string query = "INSERT INTO [Invoice_Creator].[dbo].[Student] (FirstName,LastName,Email,GradYear)";
+                    query += " VALUES (@FirstName,@LastName,@Email,@GradYear)";
+
+                    SqlCommand myCommand = new SqlCommand(query, cnn);
+                    myCommand.Parameters.AddWithValue("@FirstName", firstName);
+                    myCommand.Parameters.AddWithValue("@LastName", lastName);
+                    myCommand.Parameters.AddWithValue("@Email", email);
+                    myCommand.Parameters.AddWithValue("@GradYear", new DateTime(gradYear, 01, 01));
+                    myCommand.ExecuteNonQuery();
+
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
         }
     }
 }
