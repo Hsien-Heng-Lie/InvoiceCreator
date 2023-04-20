@@ -8,7 +8,7 @@ namespace InvoiceCreator.Data
     public static class DatabaseHandler
     {
     
-        private static string connectionString = @"Data Source=ETHANALB\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
+        private static string connectionString = @"Data Source=HSIENL\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
 
         public static List<StudentModel> getStudents()
         {
@@ -88,7 +88,10 @@ namespace InvoiceCreator.Data
 
         public static void addLevelUp(string LevelUpName, string startDate, string endDate)
         {
-            string sql = "INSERT INTO dbo.LevelUp (Name, StartDate, EndDate) VALUES ('" + LevelUpName + "', '" + startDate + "', '" + endDate + "');";
+            string sql = @"INSERT INTO dbo.LevelUp (Name, StartDate, EndDate) VALUES ('" 
+                + LevelUpName + @"', '" 
+                + startDate + @"', '" 
+                + endDate + @"')";
             using (SqlConnection cnn = new SqlConnection(connectionString))
             {
                 try
@@ -96,6 +99,7 @@ namespace InvoiceCreator.Data
                     cnn.Open();
                     SqlCommand cmd = new SqlCommand(sql, cnn);
                     cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
                     cnn.Close();
                 }
 
