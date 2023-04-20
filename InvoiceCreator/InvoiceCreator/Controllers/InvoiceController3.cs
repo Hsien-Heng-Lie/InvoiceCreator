@@ -9,6 +9,9 @@ namespace InvoiceCreatorFrontend.Controllers
 {
     public partial class InvoiceController : Controller
     {
+
+        emailSend email = EmailHelper.SendEmail;
+
         public IActionResult CreateInvoice()
         {
             // Set navbar indicator location
@@ -38,7 +41,7 @@ namespace InvoiceCreatorFrontend.Controllers
             studentMod = students.Find(s => s.Id == Convert.ToInt32(studentId));
             if (shouldSend == "on")
             {
-                EmailHelper.SendEmail(studentMod.Email, studentMod.FirstName + " " + studentMod.LastName, 1);
+                email(studentMod.Email, studentMod.FirstName + " " + studentMod.LastName, 1);
             }
 
             DatabaseHandler.addQuestion(studentId, difficultyId, levelupNameId, question);
@@ -66,7 +69,7 @@ namespace InvoiceCreatorFrontend.Controllers
             StudentModel student;
             student = students.Find(s => s.Id == studentId);
 
-            EmailHelper.SendEmail(student.Email, student.FirstName + student.LastName, student.Id);
+            email(student.Email, student.FirstName + student.LastName, student.Id);
 
             return RedirectToAction("ViewTransaction");
         }

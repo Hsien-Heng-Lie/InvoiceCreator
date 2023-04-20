@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {}
+    "C:\\Users\\bbdnet2858\\Documents\\BBD\\Grad Work\\1. Level Ups\\3. c# and dotnet\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {
+    "C:\\Users\\bbdnet2858\\Documents\\BBD\\Grad Work\\1. Level Ups\\3. c# and dotnet\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+        "projectUniqueName": "C:\\Users\\bbdnet2858\\Documents\\BBD\\Grad Work\\1. Level Ups\\3. c# and dotnet\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
         "projectName": "InvoiceCreatorFrontend",
-        "projectPath": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
-        "packagesPath": "C:\\Users\\pints001\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pints001\\Documents\\Grad Work\\InvoiceCreator\\CorrectGit\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
+        "projectPath": "C:\\Users\\bbdnet2858\\Documents\\BBD\\Grad Work\\1. Level Ups\\3. c# and dotnet\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\InvoiceCreatorFrontend.csproj",
+        "packagesPath": "C:\\Users\\bbdnet2858\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bbdnet2858\\Documents\\BBD\\Grad Work\\1. Level Ups\\3. c# and dotnet\\InvoiceCreator\\InvoiceCreator\\InvoiceCreator\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pints001\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bbdnet2858\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,24 +84,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.16, 6.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.16, 6.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.16, 6.0.16]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.16, 6.0.16]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -115,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

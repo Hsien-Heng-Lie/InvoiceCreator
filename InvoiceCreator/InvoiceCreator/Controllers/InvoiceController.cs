@@ -11,6 +11,8 @@ namespace InvoiceCreatorFrontend.Controllers
         private readonly ILogger<HomeController> _logger;
         private List<TransactionsModel> transactions;
 
+        public delegate void emailSend(string email, string name, int transId);
+
         public InvoiceController(ILogger<HomeController> logger)
         {
             _logger = logger;
