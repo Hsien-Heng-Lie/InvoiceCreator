@@ -1,8 +1,11 @@
 ﻿using InvoiceCreator.Controllers;
 using InvoiceCreator.Models;
 using InvoiceCreator.StaticData;
+using InvoiceCreator.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
+using ceTe.DynamicPDF;
+using ceTe.DynamicPDF.PageElements;
 
 namespace InvoiceCreatorFrontend.Controllers
 {
@@ -20,16 +23,6 @@ namespace InvoiceCreatorFrontend.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult CreateInvoice()
-        {
-            // Set navbar indicator location
-            ViewBag.indicatorLeft = "28%";
-            ViewBag.indicatorOpacity = "1";
-            ViewBag.selectedPage = "2";
-
             return View();
         }
     }

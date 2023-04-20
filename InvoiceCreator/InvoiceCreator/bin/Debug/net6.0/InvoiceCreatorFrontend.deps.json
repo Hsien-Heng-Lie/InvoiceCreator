@@ -8,12 +8,27 @@
     ".NETCoreApp,Version=v6.0": {
       "InvoiceCreatorFrontend/1.0.0": {
         "dependencies": {
+          "PDFsharp": "1.50.5147",
           "PagedList.Mvc": "4.5.0",
+          "System.Drawing.Common": "7.0.0",
+          "TallComponents.PDFKit": "4.0.124",
           "X.PagedList.Mvc": "8.0.7",
-          "X.PagedList.Mvc.Core": "8.4.7"
+          "X.PagedList.Mvc.Core": "8.4.7",
+          "ceTe.DynamicPDF.CoreSuite.NET": "12.2.0"
         },
         "runtime": {
           "InvoiceCreatorFrontend.dll": {}
+        }
+      },
+      "ceTe.DynamicPDF.CoreSuite.NET/12.2.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "4.7.0"
+        },
+        "runtime": {
+          "lib/net5.0/DynamicPDF.CoreSuite.dll": {
+            "assemblyVersion": "12.2.0.48461",
+            "fileVersion": "12.2.0.48461"
+          }
         }
       },
       "JetBrains.Annotations/2022.3.1": {
@@ -76,6 +91,22 @@
           }
         }
       },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "PagedList/1.17.0": {
         "runtime": {
           "lib/net40/PagedList.dll": {
@@ -95,7 +126,60 @@
           }
         }
       },
+      "PDFsharp/1.50.5147": {
+        "runtime": {
+          "lib/net20/PdfSharp.Charting.dll": {
+            "assemblyVersion": "1.50.5147.0",
+            "fileVersion": "1.50.5147.0"
+          },
+          "lib/net20/PdfSharp.dll": {
+            "assemblyVersion": "1.50.5147.0",
+            "fileVersion": "1.50.5147.0"
+          }
+        },
+        "resources": {
+          "lib/net20/de/PdfSharp.Charting.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net20/de/PdfSharp.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.Security.Cryptography.Cng/4.7.0": {},
+      "System.Security.Cryptography.Pkcs/4.7.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Cng": "4.7.0"
+        }
+      },
       "System.Text.Encodings.Web/4.7.0": {},
+      "TallComponents.PDFKit/4.0.124": {
+        "runtime": {
+          "lib/net40/TallComponents.PDF.Kit.dll": {
+            "assemblyVersion": "4.0.124.0",
+            "fileVersion": "4.0.124.0"
+          }
+        }
+      },
       "X.PagedList/8.4.7": {
         "dependencies": {
           "JetBrains.Annotations": "2022.3.1"
@@ -150,6 +234,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ceTe.DynamicPDF.CoreSuite.NET/12.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4nQk8uRn9xjgl38A88MgWdcKtMnCAwD+sjiJdCZZoq74K1qGKIM7sz6OMjaxKngAzUiG1xX505g+8xnMjeEQag==",
+      "path": "cete.dynamicpdf.coresuite.net/12.2.0",
+      "hashPath": "cete.dynamicpdf.coresuite.net.12.2.0.nupkg.sha512"
+    },
     "JetBrains.Annotations/2022.3.1": {
       "type": "package",
       "serviceable": true,
@@ -185,6 +276,13 @@
       "path": "microsoft.web.infrastructure/1.0.0",
       "hashPath": "microsoft.web.infrastructure.1.0.0.nupkg.sha512"
     },
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+    },
     "PagedList/1.17.0": {
       "type": "package",
       "serviceable": true,
@@ -199,12 +297,47 @@
       "path": "pagedlist.mvc/4.5.0",
       "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
     },
+    "PDFsharp/1.50.5147": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
+      "path": "pdfsharp/1.50.5147",
+      "hashPath": "pdfsharp.1.50.5147.nupkg.sha512"
+    },
+    "System.Drawing.Common/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Cng/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4WQjFuypWtxb/bl/YwEE7LYGn4fgpsikFfBU6xwEm4YBYiRAhXAEJ62lILBu2JJSFbClIAntFTGfDZafn8yZTg==",
+      "path": "system.security.cryptography.cng/4.7.0",
+      "hashPath": "system.security.cryptography.cng.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Pkcs/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Srzh6YlhjuMxaqMyeCCdZs22cucaUAG6SKDd3gNHBJmre0VZ71ekzWu9rvLD4YXPetyNdPvV6Qst+8C++9v3Q==",
+      "path": "system.security.cryptography.pkcs/4.7.0",
+      "hashPath": "system.security.cryptography.pkcs.4.7.0.nupkg.sha512"
+    },
     "System.Text.Encodings.Web/4.7.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-IJanJWPQvya2sbGStt3Fkdy4IaomUBSadAfYWeJDQw0zclMk9ixSvMeei6cSmTTQ6ZkGIIAbhHZVCoLR7GgX7Q==",
       "path": "system.text.encodings.web/4.7.0",
       "hashPath": "system.text.encodings.web.4.7.0.nupkg.sha512"
+    },
+    "TallComponents.PDFKit/4.0.124": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ux/+S3ieRp2Ycaj1RRmFZXovAFlo5XG6cYI5JvXId0ocD+SLur1dsePLgvvTdwfeAakzuKRc7GTfsO+iNh8IYw==",
+      "path": "tallcomponents.pdfkit/4.0.124",
+      "hashPath": "tallcomponents.pdfkit.4.0.124.nupkg.sha512"
     },
     "X.PagedList/8.4.7": {
       "type": "package",
