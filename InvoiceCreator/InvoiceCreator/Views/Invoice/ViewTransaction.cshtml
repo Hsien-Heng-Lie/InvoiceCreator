@@ -13,8 +13,16 @@
   
     @using (Html.BeginForm("ViewTransaction", "Invoice", FormMethod.Post, new { @class= "search-wrapper", placeholder="yes"}))
     {
-        @Html.TextBox("SearchString",ViewBag.currentFilter as string,null,new {@class="search-bar"})
-        <input type="submit" value="search" class="button-general-style" />
+        <div class="growing-search">
+            <div class="input">
+                @Html.TextBox("SearchString",ViewBag.currentFilter as string,null,new {@class="search-bar"})
+            </div>
+            <div class="submit">
+                <button type="submit">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+        </div>
     }
     <div class="table-wrapper">
         <div class="table-header">
@@ -22,7 +30,7 @@
             <div class="table-heading">Student name</div>
             <div class="table-heading">Grad year</div>
             <div class="table-heading">Invoice date</div>
-            <div class="table-heading">Download invoice</div>
+            <div class="table-heading"></div>
         </div>
 
         <!--This will need to be mapped across multiple based on pagination-->
@@ -37,8 +45,16 @@
                     @using (Html.BeginForm("DownloadPDF", "Invoice", FormMethod.Post))
                     {
                         @Html.Hidden("transId",transaction.Id);
-                        <button type="submit">
-                            <img class="download-img" src="~/download-svgrepo-com.svg" alt="cool" />
+                        <button type="submit" class="plain-btn" title="Downlod PDF">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    }
+
+                    @using (Html.BeginForm("emailPDF", "Invoice", FormMethod.Post))
+                    {
+                        @Html.Hidden("transId",transaction.Id);
+                        <button type="submit" class="plain-btn" title="Email PDF to Student">
+                            <i class="fa-solid fa-envelope"></i>
                         </button>
                     }
                 </div>
