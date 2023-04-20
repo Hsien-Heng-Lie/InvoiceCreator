@@ -8,6 +8,6 @@
 
         public string DifficultyDescription { get; set;}
 
-        public decimal cost { get; set;}
+        public decimal Cost { get; set;}
     }
 }

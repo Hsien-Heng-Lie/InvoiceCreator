@@ -1,6 +1,6 @@
 ﻿using InvoiceCreator.Controllers;
 using InvoiceCreator.Models;
-using InvoiceCreator.StaticData;
+using InvoiceCreator.Data;
 using InvoiceCreator.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
@@ -18,7 +18,7 @@ namespace InvoiceCreatorFrontend.Controllers
         public InvoiceController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            transactions = TransactionsData.Transactions;
+            transactions = DatabaseHandler.getTransactions();
         }
 
         public IActionResult Index()

@@ -1,6 +1,6 @@
 ﻿using InvoiceCreator.Controllers;
 using InvoiceCreator.Models;
-using InvoiceCreator.StaticData;
+using InvoiceCreator.Data;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 

@@ -1,6 +1,6 @@
 ﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
-using InvoiceCreator.StaticData;
+using InvoiceCreator.Data;
 using InvoiceCreator.Models;
 
 namespace InvoiceCreator.Helpers
@@ -31,13 +31,14 @@ namespace InvoiceCreator.Helpers
             row1.Cells.Add("Question Difficulty");
             row1.Cells.Add("Cost");
 
-            TransactionsModel transaction = TransactionsData.Transactions.FirstOrDefault(t => t.Id == TransID);
+            TransactionsModel transaction = DatabaseHandler.getTransactions().FirstOrDefault(t => t.Id == TransID);
+
             Row2 row2 = table.Rows.Add(20);
             Cell2 cell = row2.Cells.Add(transaction.Question.Description, Font.Helvetica, 12, Grayscale.Black, Grayscale.White, 1);
             row2.CellDefault.Align = TextAlign.Center;
             row2.CellDefault.VAlign = VAlign.Center;
             row2.Cells.Add(transaction.Question.Difficulty.DifficultyName);
-            row2.Cells.Add(transaction.Question.Difficulty.cost.ToString());
+            row2.Cells.Add(transaction.Question.Difficulty.Cost.ToString());
 
             table.CellDefault.Padding.Value = 2.5f;
             table.CellSpacing = 5.0f;
