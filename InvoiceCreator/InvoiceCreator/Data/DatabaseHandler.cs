@@ -201,5 +201,43 @@ namespace InvoiceCreator.Data
 
             return listOfTransactions;
         }
+
+        public static List<TransactionsModel> getStudentTransactions(int studentId)
+        {
+            List<TransactionsModel> listOfTransactions = new List<TransactionsModel>();
+            List<QuestionModel> listOfQuestions = getQuestions();
+            StudentModel student = getStudents().Find(s => s.Id.Equals(studentId));
+            string sql = "SELECT * FROM [Invoice_Creator].[dbo].[Transaction] WHERE StudentId = '" + studentId + "'";
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, cnn);
+                    cmd.CommandType = CommandType.Text;
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var transaction = new TransactionsModel();
+
+                        transaction.Id = Convert.ToInt32(reader["Id"]);
+                        transaction.Student = student;
+                        transaction.Question = listOfQuestions.Find(question => question.Id.Equals(reader["QuestionId"]));
+
+                        listOfTransactions.Add(transaction);
+                    }
+
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            return listOfTransactions;
+        }
     }
 }
