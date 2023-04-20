@@ -53,7 +53,7 @@
                 <div class="trans-card-field-icon">
                     @using (Html.BeginForm("emailPDF", "Invoice", FormMethod.Post))
                     {
-                        @Html.Hidden("transId",student.Id);
+                        @Html.Hidden("studentId",student.Id);
                         <button type="submit" class="plain-btn" title="Email PDF to Student">
                             <i class="fa-solid fa-envelope"></i>
                         </button>

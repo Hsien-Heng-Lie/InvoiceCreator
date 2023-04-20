@@ -7,8 +7,10 @@ namespace InvoiceCreator.Helpers
 {
     public class PDFHelper
     {
-        public static Document GeneratePDF(int TransID)
+        public static Document GeneratePDF(int StudentId)
         {
+            List<TransactionsModel> transactions = DatabaseHandler.getStudentTransactions(StudentId);
+
             Document pdfDoc = new Document();
             Page page = new Page(PageSize.Letter, PageOrientation.Portrait, 54.0f);
 
@@ -16,10 +18,10 @@ namespace InvoiceCreator.Helpers
 
             Label label = new Label("Hello", 0, 0, 504, 50, Font.HelveticaBold, 18, TextAlign.Center);
             page.Elements.Add(label);
-
             Table2 table = new Table2(0, 30, 800, 600);
-            Column2 col = table.Columns.Add(240);
+            Column2 col = table.Columns.Add(120);
             col.CellDefault.Align = TextAlign.Center;
+            table.Columns.Add(120);
             table.Columns.Add(120);
             table.Columns.Add(90);
 
@@ -28,18 +30,21 @@ namespace InvoiceCreator.Helpers
             row1.CellDefault.VAlign = VAlign.Center;
 
             row1.Cells.Add("Question");
+            row1.Cells.Add("Level Up");
             row1.Cells.Add("Question Difficulty");
             row1.Cells.Add("Cost");
 
-            TransactionsModel transaction = DatabaseHandler.getTransactions().FirstOrDefault(t => t.Id == TransID);
-
-            Row2 row2 = table.Rows.Add(20);
-            Cell2 cell = row2.Cells.Add(transaction.Question.Description, Font.Helvetica, 12, Grayscale.Black, Grayscale.White, 1);
-            row2.CellDefault.Align = TextAlign.Center;
-            row2.CellDefault.VAlign = VAlign.Center;
-            row2.Cells.Add(transaction.Question.Difficulty.DifficultyName);
-            row2.Cells.Add(transaction.Question.Difficulty.Cost.ToString());
-
+            transactions.ForEach(x => 
+            {
+                Row2 row2 = table.Rows.Add(20);
+                Cell2 cell = row2.Cells.Add(x.Question.Description, Font.Helvetica, 12, Grayscale.Black, Grayscale.White, 1);
+                row2.CellDefault.Align = TextAlign.Center;
+                row2.CellDefault.VAlign = VAlign.Center;
+                row2.Cells.Add(x.Question.LevelUp.CourseName);
+                row2.Cells.Add(x.Question.Difficulty.DifficultyName);
+                row2.Cells.Add(x.Question.Difficulty.Cost.ToString());
+                
+            });
             table.CellDefault.Padding.Value = 2.5f;
             table.CellSpacing = 5.0f;
             table.Border.Top.Color = RgbColor.Black;
