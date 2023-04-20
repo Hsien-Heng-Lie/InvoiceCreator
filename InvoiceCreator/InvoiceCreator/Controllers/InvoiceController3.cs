@@ -33,11 +33,12 @@ namespace InvoiceCreatorFrontend.Controllers
             string studentId = student.Split('.')[0];
             string difficultyId = difficulty.Split('.')[0];
             string levelupNameId = levelupName.Split('.')[0];
-
+            List<StudentModel> students = DatabaseHandler.getStudents();
+            StudentModel studentMod;
+            studentMod = students.Find(s => s.Id == Convert.ToInt32(studentId));
             if (shouldSend == "on")
             {
-                EmailHelper.SendEmail("fourie.hyla@gmail.com", student, 1);
-                Console.WriteLine("inif");
+                EmailHelper.SendEmail(studentMod.Email, studentMod.FirstName + " " + studentMod.LastName, 1);
             }
 
             DatabaseHandler.addQuestion(studentId, difficultyId, levelupNameId, question);
