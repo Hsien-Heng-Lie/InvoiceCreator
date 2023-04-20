@@ -4,12 +4,13 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 
-
+public delegate Document GenPDF(int x);
 namespace InvoiceCreatorFrontend.helpers
 {
     public class EmailHelper
     {
-        public static void SendEmail(string email, string name, int transId)
+        public event GenPDF generateDoc;
+        public void SendEmail(string email, string name, int transId)
         {
 
             var smtpClient = new SmtpClient("levelup-invoice.stuffs.co.za", 587)
@@ -24,7 +25,8 @@ namespace InvoiceCreatorFrontend.helpers
             message.Subject = "PAY ME";
             message.Body = "PAY ME SOME MORE";
 
-            Document document = PDFHelper.GeneratePDF(transId);
+            
+            Document document = generateDoc.Invoke(transId);
             var memorystream = new System.IO.MemoryStream();
             document.Draw(memorystream);
             memorystream.Seek(0, SeekOrigin.Begin);

@@ -25,6 +25,8 @@ namespace InvoiceCreatorFrontend.Controllers
 
         public IActionResult AddInvoice(string student, string difficulty, string levelupName, string question, string shouldSend)
         { //THE SPECIFIC ADDITION CODE return View("CreateInvoice"); }
+            EmailHelper email = new EmailHelper();
+            
             if(student == null || difficulty == null || levelupName == null)
             {
                 return RedirectToAction("CreateInvoice");
@@ -38,7 +40,8 @@ namespace InvoiceCreatorFrontend.Controllers
             studentMod = students.Find(s => s.Id == Convert.ToInt32(studentId));
             if (shouldSend == "on")
             {
-                EmailHelper.SendEmail(studentMod.Email, studentMod.FirstName + " " + studentMod.LastName, 1);
+                email.generateDoc += PDFHelper.GeneratePDF;
+                email.SendEmail(studentMod.Email, studentMod.FirstName + " " + studentMod.LastName, 1);
             }
 
             DatabaseHandler.addQuestion(studentId, difficultyId, levelupNameId, question);
@@ -62,11 +65,14 @@ namespace InvoiceCreatorFrontend.Controllers
 
         public IActionResult EmailPDF(int studentId)
         {
+            EmailHelper email = new EmailHelper();
+
             List<StudentModel> students = DatabaseHandler.getStudents();
             StudentModel student;
             student = students.Find(s => s.Id == studentId);
 
-            EmailHelper.SendEmail(student.Email, student.FirstName + student.LastName, student.Id);
+            email.generateDoc += PDFHelper.GeneratePDF;
+            email.SendEmail(student.Email, student.FirstName + " " + student.LastName, 1);
 
             return RedirectToAction("ViewTransaction");
         }
