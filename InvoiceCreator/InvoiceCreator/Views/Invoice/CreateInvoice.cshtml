@@ -11,7 +11,7 @@
 
 <div class="text-center">
     <div class="create-invoice-wrapper">
-        @using (Html.BeginForm("CreateInvoice", "Invoice", FormMethod.Post))
+        @using (Html.BeginForm("AddInvoice", "Invoice", FormMethod.Post))
         {
             
         <div class="section">
@@ -21,7 +21,7 @@
                     <option selected disabled>Select Student</option>                                  
                     @foreach (var student in students)
                     {
-                        <option>@student.FirstName @student.LastName (@student.gradYear)</option>
+                        <option>@student.Id. @student.FirstName @student.LastName (@student.gradYear)</option>
                     }
 
                     <option disabled>--------------------</option>
@@ -36,21 +36,21 @@
             <!--<form>-->
                 <div class="form-group">
                     <label for="questionDifficulty">Difficulty</label>
-                    <select id="questionDifficulty" name="difficulty">
+                        <select id="questionDifficulty" name="difficulty">
                         @foreach (var qd in questionDifficulties)
                         {
-                                <option>@qd.DifficultyName (@qd.DifficultyDescription) - $@qd.Cost</option>
+                                <option>@qd.Id. @qd.DifficultyName (@qd.DifficultyDescription) - $@qd.Cost</option>
                         }
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="questionLevelup">Level Up</label>
-                    <select id="questionLevelup" onchange="this.value == 'addNew' ? window.location = '/LevelUp/AddLevelUp/' : null" name="levelUp">
+                        <select id="questionLevelup" onchange="this.value == 'addNew' ? window.location = '/LevelUp/AddLevelUp/' : null" name="levelupName">
                         <option selected disabled>Select Level Up</option>
                         @foreach (var levelup in levelups)
                         {
-                            <option>@levelup.CourseName @levelup.Start.ToString("yyyy/MM/dd") - @levelup.End.ToString("yyyy/MM/dd")</option>
+                            <option>@levelup.Id. @levelup.CourseName @levelup.Start.ToString("yyyy/MM/dd") - @levelup.End.ToString("yyyy/MM/dd")</option>
                         }
                         <option disabled>--------------------</option>
                         <option value="addNew">Add new Level-Up</option>

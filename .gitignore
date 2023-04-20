@@ -8,3 +8,5 @@
 /.vs
 /InvoiceCreator/InvoiceCreator/obj/Debug/net6.0
 /InvoiceCreator/InvoiceCreator/obj/Release/net6.0
+/InvoiceCreator/InvoiceCreator/bin/Debug/net6.0
+/InvoiceCreator/InvoiceCreator/obj/Debug/net6.0/InvoiceCreatorFrontend.GeneratedMSBuildEditorConfig.editorconfig
