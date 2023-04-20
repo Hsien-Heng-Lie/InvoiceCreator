@@ -72,7 +72,7 @@ namespace InvoiceCreatorFrontend.Controllers
             ViewBag.indicatorLeft = "28%";
             ViewBag.indicatorOpacity = "1";
             ViewBag.selectedPage = "2";
-            EmailHelper.SendEmail("stevenp@bbd.co.za", student);
+            EmailHelper.SendEmail("fourie.hyla@gmail.com", student, 1);
             return View();
         }
     }
