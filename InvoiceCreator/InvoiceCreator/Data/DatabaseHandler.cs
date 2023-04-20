@@ -8,7 +8,7 @@ namespace InvoiceCreator.Data
     public static class DatabaseHandler
     {
     
-        private static string connectionString = @"Data Source=BBD-SP\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
+        private static string connectionString = @"Data Source=ETHANALB\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
 
         public static List<StudentModel> getStudents()
         {

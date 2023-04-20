@@ -10,7 +10,7 @@ namespace InvoiceCreatorFrontend.helpers
     public class EmailHelper
     {
         public event GenPDF generateDoc;
-        public void SendEmail(string email, string name, int transId)
+        public void SendEmail(string email, string name, int studentId)
         {
 
             var smtpClient = new SmtpClient("levelup-invoice.stuffs.co.za", 587)
@@ -26,7 +26,7 @@ namespace InvoiceCreatorFrontend.helpers
             message.Body = "PAY ME SOME MORE";
 
             
-            Document document = generateDoc.Invoke(transId);
+            Document document = generateDoc.Invoke(studentId);
             var memorystream = new System.IO.MemoryStream();
             document.Draw(memorystream);
             memorystream.Seek(0, SeekOrigin.Begin);
