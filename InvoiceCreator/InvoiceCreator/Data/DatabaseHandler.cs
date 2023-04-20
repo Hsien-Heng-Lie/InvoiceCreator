@@ -6,7 +6,7 @@ namespace InvoiceCreator.Data
 {
     public static class DatabaseHandler
     {
-        private static string connectionString = @"Data Source=HSIENL\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
+        private static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB; Database=Invoice_Creator;Integrated Security = True;";
 
         public static List<StudentModel> getStudents()
         {
@@ -82,6 +82,26 @@ namespace InvoiceCreator.Data
             }
 
             return listOfLevelUps;
+        }
+
+        public static void addLevelUp(string LevelUpName, string startDate, string endDate)
+        {
+            string sql = "INSERT INTO dbo.LevelUp (Name, StartDate, EndDate) VALUES ('" + LevelUpName + "', '" + startDate + "', '" + endDate + "');";
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, cnn);
+                    cmd.CommandType = CommandType.Text;
+                    cnn.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
         }
 
 
