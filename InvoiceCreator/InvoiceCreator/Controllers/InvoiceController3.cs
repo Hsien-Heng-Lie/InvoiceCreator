@@ -18,9 +18,23 @@ namespace InvoiceCreatorFrontend.Controllers
             ViewData["Students"] = DatabaseHandler.getStudents();
             ViewData["LevelUps"] = DatabaseHandler.getLevelUps();
             ViewData["QuestionDifficulties"] = DatabaseHandler.getQuestionDifficulties();
-            //ViewData["Questions"] = DatabaseHandler.getQuestions();
-            ViewData["T"] = DatabaseHandler.getTransactions();
+
             return View();
+        }
+
+        public IActionResult AddInvoice(string student, string difficulty, string levelupName, string question)
+        { //THE SPECIFIC ADDITION CODE return View("CreateInvoice"); }
+            if(student == null || difficulty == null || levelupName == null)
+            {
+                return RedirectToAction("CreateInvoice");
+            }
+            
+            string studentId = student.Split('.')[0];
+            string difficultyId = difficulty.Split('.')[0];
+            string levelupNameId = levelupName.Split('.')[0];
+
+            DatabaseHandler.addQuestion(studentId, difficultyId, levelupNameId, question);
+            return RedirectToAction("CreateInvoice");
         }
     }
 }
