@@ -1,4 +1,5 @@
 ﻿using InvoiceCreator.Controllers;
+using InvoiceCreator.Data;
 using InvoiceCreator.Models;
 using InvoiceCreator.StaticData;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ namespace InvoiceCreatorFrontend.Controllers
 
         private readonly ILogger<HomeController> _logger;
         private List<TransactionsModel> transactions;
+        private List<StudentModel> listOfStudents;
 
         public InvoiceController(ILogger<HomeController> logger)
         {
@@ -60,6 +62,11 @@ namespace InvoiceCreatorFrontend.Controllers
             ViewBag.indicatorOpacity = "1";
             ViewBag.selectedPage = "2";
 
+            ViewData["Students"] = DatabaseHandler.getStudents();
+            ViewData["LevelUps"] = DatabaseHandler.getLevelUps();
+            ViewData["QuestionDifficulties"] = DatabaseHandler.getQuestionDifficulties();
+            //ViewData["Questions"] = DatabaseHandler.getQuestions();
+            ViewData["T"] = DatabaseHandler.getTransactions();
             return View();
         }
     }

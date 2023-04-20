@@ -1,10 +1,13 @@
-@using InvoiceCreator.StaticData;
 @model List<InvoiceCreator.Models.StudentModel>;
     
 
 @{
     ViewData["Title"] = "Create Invoice";
+    IEnumerable<StudentModel> students = ViewData["Students"] as IEnumerable<StudentModel>;
+    IEnumerable<LevelUpModel> levelups = ViewData["LevelUps"] as IEnumerable<LevelUpModel>;
+    IEnumerable<QuestionDifficultyModel> questionDifficulties = ViewData["QuestionDifficulties"] as IEnumerable<QuestionDifficultyModel>;
 }
+
 
 <div class="text-center">
     <div class="create-invoice-wrapper">
@@ -13,11 +16,12 @@
             <!--<form>-->
                 <label for="email"><h5>Student</h5></label>
                 <select onchange="this.value == 'addNew' ? window.location = '/Student/AddStudent/' : null" name="student">
-                    <option selected disabled>Select Student</option>
-                    @foreach (var student in StudentData.Students)
+                    <option selected disabled>Select Student</option>                                  
+                    @foreach (var student in students)
                     {
                         <option>@student.FirstName @student.LastName (@student.gradYear)</option>
                     }
+
                     <option disabled>--------------------</option>
                     <option value="addNew">Add new student</option>
                 </select>
@@ -31,12 +35,10 @@
                 <div class="form-group">
                     <label for="questionDifficulty">Difficulty</label>
                     <select id="questionDifficulty" name="difficulty">
-                        <option selected disabled>Select Difficulty</option>
-                        <option value="1">Very Easy</option>
-                        <option value="2">Easy</option>
-                        <option value="3">Medium</option>
-                        <option value="4">Hard</option>
-                        <option value="5">Very Hard</option>
+                        @foreach (var qd in questionDifficulties)
+                        {
+                                <option>@qd.DifficultyName (@qd.DifficultyDescription) - $@qd.Cost</option>
+                        }
                     </select>
                 </div>
 
@@ -44,7 +46,10 @@
                     <label for="questionLevelup">Level Up</label>
                     <select id="questionLevelup" onchange="this.value == 'addNew' ? window.location = '/LevelUp/AddLevelUp/' : null" name="levelUp">
                         <option selected disabled>Select Level Up</option>
-
+                        @foreach (var levelup in levelups)
+                        {
+                            <option>@levelup.CourseName @levelup.Start.ToString("yyyy/MM/dd") - @levelup.End.ToString("yyyy/MM/dd")</option>
+                        }
                         <option disabled>--------------------</option>
                         <option value="addNew">Add new Level-Up</option>
                     </select>
