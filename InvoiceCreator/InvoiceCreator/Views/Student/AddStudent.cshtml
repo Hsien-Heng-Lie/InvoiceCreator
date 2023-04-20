@@ -4,22 +4,24 @@
 
 <div class="text-center">
     <div class="add-student-wrapper">
-        <form>
+        
             
-        <div class="section">
+        @using (Html.BeginForm("AddStudent", "Student",FormMethod.Post))
+        { 
+            <div class="section">
             <h5>Sudent Information</h5>
             <!--<form>-->
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" placeholder="e.g. John" />
+                    <input type="text" id="FirstName" name="FirstName" placeholder="e.g. John" />
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" placeholder="e.g. Doe" />
+                    <input type="text" id="LastName" name="LastName" placeholder="e.g. Doe" />
                 </div>
                 <div class="form-group">
                     <label for="gradGroupYear">Grad Group Year</label>
-                    <input type="number" id="gradGroupYear" value="2023" placeholder="e.g. 2023" />
+                    <input type="number" id="GradYear" name="GradYear" value="2023" placeholder="e.g. 2023" />
                 </div>
             <!--</form>-->
         </div>
@@ -27,11 +29,12 @@
         <div class="section">
             <!--<form>-->
                 <label for="email"><h5>Student Email</h5></label>
-                <input type="email" id="email" placeholder="e.g. johnd@bbd.co.za" />
+                <input type="email" id="email" name="Email" placeholder="e.g. johnd@bbd.co.za" />
             <!--</form>-->
         </div>
 
-        <button class="submit-btn">Submit</button>
-        </form>
+        <button type="submit" class="submit-btn">Submit</button>
+        }
+        
     </div>
 </div>

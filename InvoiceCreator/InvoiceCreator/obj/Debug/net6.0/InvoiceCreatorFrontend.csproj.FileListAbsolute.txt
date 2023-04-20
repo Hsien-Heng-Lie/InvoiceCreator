@@ -177,3 +177,13 @@ C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\I
 C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\JetBrains.Annotations.dll
 C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
 C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\obj\Debug\net6.0\InvoiceCreatorFrontend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\PdfSharp.Charting.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\PdfSharp.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\TallComponents.PDF.Kit.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\de\PdfSharp.Charting.resources.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\de\PdfSharp.resources.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\pints001\Documents\Grad Work\InvoiceCreator\CorrectGit\InvoiceCreator\InvoiceCreator\InvoiceCreator\bin\Debug\net6.0\DynamicPDF.CoreSuite.dll
