@@ -1,8 +1,7 @@
-﻿using InvoiceCreator.Controllers;
-using InvoiceCreator.Data;
-using InvoiceCreator.Models;
+﻿using InvoiceCreator.Data;
+using InvoiceCreator.Helpers;
 using Microsoft.AspNetCore.Mvc;
-using X.PagedList;
+using ceTe.DynamicPDF;
 
 namespace InvoiceCreatorFrontend.Controllers
 {
@@ -35,6 +34,15 @@ namespace InvoiceCreatorFrontend.Controllers
 
             DatabaseHandler.addQuestion(studentId, difficultyId, levelupNameId, question);
             return RedirectToAction("CreateInvoice");
+        }
+
+        public IActionResult DownloadPDF(int transID)
+        {
+            Document document = PDFHelper.GeneratePDF(transID);
+            var memoryStream = new System.IO.MemoryStream();
+            document.Draw(memoryStream);
+            byte[] bytes = memoryStream.ToArray();
+            return File(bytes, "application/pdf", "myPdf.pdf");
         }
     }
 }

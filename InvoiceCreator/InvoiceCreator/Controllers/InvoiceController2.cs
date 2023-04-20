@@ -1,6 +1,5 @@
-﻿using InvoiceCreator.Controllers;
+﻿using InvoiceCreator.Data;
 using InvoiceCreator.Models;
-using InvoiceCreator.Data;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
@@ -16,6 +15,8 @@ namespace InvoiceCreatorFrontend.Controllers
             ViewBag.indicatorOpacity = "1";
             ViewBag.selectedPage = "1";
 
+            List<StudentModel> students = DatabaseHandler.getStudents();
+
             if (searchString != null)
             {
                 page = 1;
@@ -29,13 +30,13 @@ namespace InvoiceCreatorFrontend.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                transactions = transactions.Where(s => s.Student.FirstName.Contains(searchString) || s.Student.LastName.Contains(searchString)).ToList();
+                students = students.Where(s => s.FirstName.Contains(searchString) || s.LastName.Contains(searchString)).ToList();
             }
 
             int pageSize = 5;
             int pageNumber = (page ?? 1);
 
-            return View(transactions.ToPagedList(pageNumber, pageSize));
+            return View(students.ToPagedList(pageNumber, pageSize));
             //return View(pagination.GetPageByNumber(transactions, pagination._currentPage));
         }
     }
