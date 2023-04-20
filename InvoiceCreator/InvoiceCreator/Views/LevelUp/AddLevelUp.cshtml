@@ -4,24 +4,26 @@
 
 <div class="text-center">
     <div class="add-student-wrapper">
-        <form>
-            <div class="section">
+        @using (Html.BeginForm("AddLevelUp", "LevelUp", FormMethod.Post))
+        {
+            
+        <div class="section">
                 <h5>Level Up Information</h5>
                 <div class="form-group">
                     <label for="firstName">Level-Up Name</label>
-                    <input type="text" id="firstName" placeholder="e.g. C#" />
+                    <input type="text" id="LevelUpName"name="LevelUpName" placeholder="e.g. C#" />
                 </div>
                 <div class="form-group">
                     <label for="startDate">Start Date</label>
-                    <input type="date" id="startDate" />
+                    <input type="date" id="startDate" name="startDate"/>
                 </div>
                 <div class="form-group">
                     <label for="endDate">End Date</label>
-                    <input type="date" id="endDate" />
+                    <input  type="date" id="endDate" name="endDate" />
                 </div>
             </div>
 
-            <button class="submit-btn">Submit</button>
-        </form>
+            <button type="submit" class="submit-btn">Submit</button>
+        }
     </div>
 </div>

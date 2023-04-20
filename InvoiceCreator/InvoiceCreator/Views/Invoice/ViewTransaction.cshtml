@@ -29,12 +29,18 @@
         @foreach(var transaction in Model )
         {
             <div class="transaction-card">
-                <div class="trans-card-field">@transaction.Id</div>
+                <div class="trans-card-field" name="transId">@transaction.Id</div>
                 <div class="trans-card-field">@transaction.Student.FirstName @transaction.Student.LastName</div>
                 <div class="trans-card-field">@transaction.Student.gradYear</div>
                 <div class="trans-card-field">@transaction.Question.LevelUp.End</div>
                 <div class="trans-card-field-icon">
-                    <img class="download-img" src="~/download-svgrepo-com.svg" alt="cool"/>
+                    @using (Html.BeginForm("DownloadPDF", "Invoice", FormMethod.Post))
+                    {
+                        @Html.Hidden("transId",transaction.Id);
+                        <button type="submit">
+                            <img class="download-img" src="~/download-svgrepo-com.svg" alt="cool" />
+                        </button>
+                    }
                 </div>
             </div>
         }

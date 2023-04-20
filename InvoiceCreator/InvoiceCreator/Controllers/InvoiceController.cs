@@ -1,8 +1,11 @@
 ﻿using InvoiceCreator.Controllers;
 using InvoiceCreator.Models;
 using InvoiceCreator.StaticData;
+using InvoiceCreator.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
+using ceTe.DynamicPDF;
+using ceTe.DynamicPDF.PageElements;
 
 namespace InvoiceCreatorFrontend.Controllers
 {
@@ -53,7 +56,17 @@ namespace InvoiceCreatorFrontend.Controllers
             //return View(pagination.GetPageByNumber(transactions, pagination._currentPage));
         }
 
-        public IActionResult CreateInvoice()
+        public IActionResult DownloadPDF(int transID) 
+        {
+            Document document = PDFHelper.GeneratePDF(transID);
+            var memoryStream = new System.IO.MemoryStream();
+            document.Draw(memoryStream);
+            byte[] bytes = memoryStream.ToArray();
+            return File(bytes, "application/pdf", "myPdf.pdf");
+        }
+
+        // shouldsend return on or off. not true or false.
+        public IActionResult CreateInvoice(string student, string difficulty, string levelup, string question,string shouldSend)
         {
             // Set navbar indicator location
             ViewBag.indicatorLeft = "28%";
