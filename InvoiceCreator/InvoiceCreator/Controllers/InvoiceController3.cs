@@ -46,11 +46,17 @@ namespace InvoiceCreatorFrontend.Controllers
 
         public IActionResult DownloadPDF(int transID)
         {
+
+            List<StudentModel> students = DatabaseHandler.getStudents();
+            StudentModel student;
+            student = students.Find(s => s.Id == transID);
+
             Document document = PDFHelper.GeneratePDF(transID);
             var memoryStream = new System.IO.MemoryStream();
             document.Draw(memoryStream);
             byte[] bytes = memoryStream.ToArray();
-            return File(bytes, "application/pdf", "myPdf.pdf");
+
+            return File(bytes, "application/pdf",student.FirstName +"_"+ student.LastName + "_Invoice.pdf");
         }
 
         public IActionResult EmailPDF(int studentId)

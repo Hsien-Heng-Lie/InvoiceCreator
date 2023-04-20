@@ -13,5 +13,6 @@ namespace InvoiceCreatorFrontend.Controllers
             
             return View();
         }
+
     }
 }
