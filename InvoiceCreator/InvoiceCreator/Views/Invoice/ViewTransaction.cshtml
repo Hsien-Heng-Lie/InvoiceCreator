@@ -43,7 +43,7 @@
                 <div class="trans-card-field-icon">
                     @using (Html.BeginForm("DownloadPDF", "Invoice", FormMethod.Post))
                     {
-                        @Html.Hidden("transId",student.Id)
+                        @Html.Hidden("studentId",student.Id)
                         ;
                         <button type="submit" class="plain-btn" title="Downlod PDF">
                             <i class="fa-solid fa-download"></i>
