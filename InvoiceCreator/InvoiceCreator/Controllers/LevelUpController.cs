@@ -4,7 +4,7 @@ namespace InvoiceCreatorFrontend.Controllers
 {
     public class LevelUpController : Controller
     {
-        public IActionResult AddLevelUp()
+        public IActionResult AddLevelUp(string LevelUpName, string startDate, string endDate)
         {
             // Set navbar indicator location
             ViewBag.indicatorLeft = "77.5%";

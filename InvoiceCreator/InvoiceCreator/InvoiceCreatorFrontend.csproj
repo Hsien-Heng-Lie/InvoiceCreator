@@ -12,12 +12,16 @@
 
   <ItemGroup>
     <Folder Include="assets\" />
-    <Folder Include="Helpers\" />
+    <Folder Include="StaticData\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ceTe.DynamicPDF.CoreSuite.NET" Version="12.2.0" />
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="PDFsharp" Version="1.50.5147" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="TallComponents.PDFKit" Version="4.0.124" />
+	<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
     <PackageReference Include="X.PagedList.Mvc" Version="8.0.7" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
   </ItemGroup>
