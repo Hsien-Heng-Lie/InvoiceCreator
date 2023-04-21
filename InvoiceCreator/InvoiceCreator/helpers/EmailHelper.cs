@@ -13,14 +13,19 @@ namespace InvoiceCreatorFrontend.helpers
         public void SendEmail(string email, string name, int studentId)
         {
 
-            var smtpClient = new SmtpClient("levelup-invoice.stuffs.co.za", 587)
+            string emailString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("EmailSettings")["Email"];
+            string passwordString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("EmailSettings")["Password"];
+
+            var smtpClient = new SmtpClient(new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("EmailSettings")["Client"], 587)
             {
-                Credentials = new NetworkCredential("no-reply@levelup-invoice.stuffs.co.za", "BBDInvoice123!"),
+                Credentials = new NetworkCredential(emailString,
+                    passwordString
+                    ),
                 EnableSsl = true,
             };
 
             var message = new MailMessage();
-            message.From = new MailAddress("no-reply@levelup-invoice.stuffs.co.za");
+            message.From = new MailAddress(emailString);
             message.To.Add(new MailAddress(email, name));
             message.Subject = "PAY ME";
             message.Body = "PAY ME SOME MORE";

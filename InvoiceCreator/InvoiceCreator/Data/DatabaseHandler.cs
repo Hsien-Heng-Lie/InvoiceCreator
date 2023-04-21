@@ -231,10 +231,12 @@ namespace InvoiceCreator.Data
         public static void addQuestion(string studentId, string difficultyId, string levelUpId, string question)
         {
 
+            string questionString = question.Replace("'","''");
+
             string sql = "DECLARE @studentId INT =" + studentId
                 + ",@diffcultyId INT =" + difficultyId
                 + ",@levelUpId INT =" + levelUpId
-                + ",@question VARCHAR(500) =" + @"'" + question + @"'" 
+                + ",@question VARCHAR(500) =" + @"'" + questionString + @"'" 
                 + @"INSERT INTO [dbo].[Question]
                     ([Description],
                     [QuestionDifficultyId],
