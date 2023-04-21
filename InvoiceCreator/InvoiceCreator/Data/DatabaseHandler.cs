@@ -1,4 +1,5 @@
-﻿using InvoiceCreator.Models;
+﻿using ceTe.DynamicPDF;
+using InvoiceCreator.Models;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -7,8 +8,7 @@ namespace InvoiceCreator.Data
 {
     public static class DatabaseHandler
     {
-    
-        private static string connectionString = @"Data Source=ETHANALB\SQLEXPRESS; Database=Invoice_Creator;Integrated Security = True;";
+     private static string connectionString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings")["DefaultConnection"];
 
         public static List<StudentModel> getStudents()
         {
@@ -231,10 +231,12 @@ namespace InvoiceCreator.Data
         public static void addQuestion(string studentId, string difficultyId, string levelUpId, string question)
         {
 
+            string questionString = question.Replace("'","''");
+
             string sql = "DECLARE @studentId INT =" + studentId
                 + ",@diffcultyId INT =" + difficultyId
                 + ",@levelUpId INT =" + levelUpId
-                + ",@question VARCHAR(500) =" + @"'" + question + @"'" 
+                + ",@question VARCHAR(500) =" + @"'" + questionString + @"'" 
                 + @"INSERT INTO [dbo].[Question]
                     ([Description],
                     [QuestionDifficultyId],
